@@ -1,4 +1,4 @@
-from . import SimpleConv1D, DenseDropout, Sumator
+from layers import SimpleConv1D, DenseDropout, Sumator
 from keras import Model, Sequential
 from keras.layers import Dense, Softmax
 
