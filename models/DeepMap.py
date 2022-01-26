@@ -1,6 +1,6 @@
 from layers import SimpleConv1D, DenseDropout, Sumator
 from keras import Model, Sequential
-from keras.layers import Dense, Softmax
+from keras.layers import Dense, Softmax, InputLayer
 
 
 class DeepMap(Model):
@@ -8,6 +8,7 @@ class DeepMap(Model):
     def __init__(self, filter_size, num_instance, feature_size, num_class, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.model = Sequential([
+            InputLayer((num_instance * filter_size, feature_size)),
             SimpleConv1D(32, filter_size, filter_size),
             SimpleConv1D(16, 1, 1),
             SimpleConv1D(8, 1, 1),

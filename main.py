@@ -7,7 +7,7 @@ if __name__ == "__main__":
 
     for ds_name, has in zip(dataset, hasnodelabel):
         print(f'Dataset:\t{ds_name}')
-        for ft in (2, 1, 3):
+        for ft in (1, 2, 3):
             for it in (0, 1, 2, 3):
                 print(f'feature: {ft},  imp: {it}')
                 learning_loop(ds_name, feature_type=ft, importance_type=it, hasnl=has, filter_size=3, graphlet_size=5,
